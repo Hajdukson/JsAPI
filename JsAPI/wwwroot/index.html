@@ -1,42 +1,61 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>To-do CRUD</title>
+    <title>Użytkownicy</title>
     <link rel="stylesheet" href="css/site.css" />
-  </head>
-  <body>
-    <form action="javascript:void(0);" method="POST" onsubmit="addPerson()">
-      <input type="text" id="add-firstName" />
-      <input type="text" id="add-lastName" />
-      <input type="submit" value="Dodaj osobę" />
-    </form>
+</head>
+<body>
+    <div class="container">
+        <form action="javascript:void(0);" method="POST" onsubmit="addPerson()">
+            <div class="row">
+                <div class="col-25">
+                    <label>Podaj imię</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="add-firstName" placeholder="Imię.." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Podaj nazwisko</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="add-lastName" placeholder="Nazwisko.." />
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Dodaj osobę" class="container" />
+            </div>
+        </form>
 
-    <div id="editForm">
-      <h3>Edit</h3>
-      <form action="javascript:void(0);" onsubmit="updatePerson()">
-        <input type="hidden" id="edit-id" />
-        <input type="text" id="edit-firstName" />
-        <input type="text" id="edit-lastName" />
-        <input type="submit" value="Save" />
-        <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-      </form>
+        <p id="counter"></p>
+
+
+        <div id="editForm">
+            <h3>Edytuj</h3>
+            <form action="javascript:void(0);" onsubmit="updatePerson()">
+                <input type="hidden" id="edit-id" />
+                <input type="text" id="edit-firstName" style="margin-bottom: 10px" />
+                <input type="text" id="edit-lastName" />
+                <input type="submit" value="Zapisz" style="margin-left:10px" />
+                <input type="button" onclick="closeInput()" value="Anuluj" />
+            </form>
+        </div>
+
+        <table style="margin-top:50px">
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th></th>
+            </tr>
+            <tbody id="persons"></tbody>
+        </table>
     </div>
-
-    <p id="counter"></p>
-
-    <table>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th></th>
-      </tr>
-      <tbody id="persons"></tbody>
-    </table>
 
     <script src="js/site.js" asp-append-version="true"></script>
     <script type="text/javascript">
         getPersons();
     </script>
-  </body>
+</body>
 </html>

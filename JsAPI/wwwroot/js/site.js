@@ -79,7 +79,7 @@ function closeInput() {
 }
 
 function _displayCount(personCount) {
-    const persons = (personCount === 1) ? 'person' : 'persons';
+    const persons = (personCount === 1) ? 'użytkownik' : 'uyżtkowników';
 
     document.getElementById('counter').innerText = `${personCount} ${persons}`;
 }
@@ -95,11 +95,11 @@ function _displayPersons(data) {
     data.forEach(person => {
 
         let editButton = button.cloneNode(false);
-        editButton.innerText = 'Edit';
+        editButton.innerText = 'Edytuj';
         editButton.setAttribute('onclick', `displayEditForm(${person.id})`);
 
         let deleteButton = button.cloneNode(false);
-        deleteButton.innerText = 'Delete';
+        deleteButton.innerText = 'Usuń';
         deleteButton.setAttribute('onclick', `deletePerson(${person.id})`);
 
         let tr = tBody.insertRow();
