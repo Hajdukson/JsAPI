@@ -79,7 +79,7 @@ function closeInput() {
 }
 
 function _displayCount(personCount) {
-    const persons = (personCount === 1) ? 'użytkownik' : 'uyżtkowników';
+    const persons = (personCount === 1) ? 'użytkownik' : 'użytkowników';
 
     document.getElementById('counter').innerText = `${personCount} ${persons}`;
 }
