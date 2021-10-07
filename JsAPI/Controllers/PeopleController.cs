@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JsAPI.Controllers
 {
-    [Route("api/people")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PeopleController : ControllerBase
     {
